@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Network Monitoring and Management System (CNMMS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7db1ac;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #f7f0cb;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #914d89;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p, ul, ol {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #914d89;
+            color: #ffffff;
+        }
+
+        .command-line {
+            background-color: #e0e0e0;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .watermark a {
+            color: #15bb15;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Corporate Network Monitoring and Management System (CNMMS)</h1>
+    </header>
+
+    <div class="container">
+        <h2>Project Overview</h2>
+        <p><strong>Objective:</strong> Development of a comprehensive network monitoring and management system for a corporate environment.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li><strong>Network Traffic Monitoring:</strong> It can capture and analyze network traffic in real-time.</li>
+            <li><strong>Anomaly Detection:</strong> It is able to identify unusual network activities that may indicate security threats.</li>
+            <li><strong>Network Performance Metrics:</strong> It can track and report on key performance indicators (KPIs) like bandwidth usage, latency, and packet loss.</li>
+            <li><strong>Dashboard:</strong> A simple web-based interface for network administrators to visualize network status and perform management tasks.</li>
+            <li><strong>Alert System:</strong> Notify administrators of critical network events.</li>
+        </ul>
+        
+        <h2>Folder Structure</h2>
+        <pre>
+CNMMS/
+├── backend/
+│   ├── src/
+│   │   ├── main.py
+│   │   ├── network_monitor.py
+│   │   ├── anomaly_detection.py
+│   │   ├── metrics_collector.py
+│   │   ├── alert_system.py
+│   ├── requirements.txt
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── App.js
+│   │   ├── index.js
+│   ├── package.json
+├── docs/
+│   ├── installation_guide.md
+│   ├── deployment_guide.md
+├── docker-compose.yml
+├── README.md
+        </pre>
+        
+        <h2>Structure Explanation</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Directory/File</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color: #03cc0d;">CNMMS/</strong></td>
+                    <td>The root directory of the project.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;<strong style="color: #ff4d00;">backend/</strong></td>
+                    <td>Contains the backend code for the project.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #bc951f;">src/</strong></td>
+                    <td>Contains the source code files for the backend.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">main.py</strong></td>
+                    <td>Main script for launching the backend.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">network_monitor.py</strong></td>
+                    <td>Module for network monitoring.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">anomaly_detection.py</strong></td>
+                    <td>Module for anomaly detection.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">metrics_collector.py</strong></td>
+                    <td>Module for collecting network metrics.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">alert_system.py</strong></td>
+                    <td>Module for generating alerts.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #ac8c2c;">requirements.txt</strong></td>
+                    <td>List of Python dependencies.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;<strong style="color: #ff4d00">frontend/</strong></td>
+                    <td>Contains the frontend code for the project.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #ac8c2c;">public/</strong></td>
+                    <td>Static assets for the React app.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #ac8c2c;">src/</strong></td>
+                    <td>Contains the source code files for the frontend.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">components/</strong></td>
+                    <td>React components for the dashboard.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">App.js</strong></td>
+                    <td>Main React application component.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;<strong style="color: #007bff;">index.js</strong></td>
+                    <td>Entry point for the React app.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #007bff;">package.json</td>
+                    <td>Project dependencies and configuration.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;<strong style="color: #ff4d00">docs/</strong></td>
+                    <td>Contains documentation files for the project.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #ac8c2c;">installation_guide.md</strong></td>
+                    <td>Installation instructions for the project.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;<strong style="color: #ac8c2c;">deployment_guide.md</strong></td>
+                    <td>Deployment instructions for the project.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;<strong style="color: #ff0022">docker-compose.yml</strong></td>
+                    <td>Configuration for Docker Compose.</td>
+                </tr>
+                <tr>
+                    <td>&emsp;<strong style="color: #ff4d00">README.md</strong></td>
+                    <td>Project overview and instructions.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Installation Guide</h2>
+        <p><strong>Prerequisites:</strong></p>
+        <ul>
+            <li>Python 3.8+</li>
+            <li>Node.js 14+</li>
+            <li>Docker</li>
+        </ul>
+        
+        <h3>Backend Installation</h3>
+        <ol>
+            <li><strong>Clone the repository:</strong></li>
+            <pre>git clone https://github.com/yourusername/CNMMS.git<br>cd CNMMS/backend</pre>
+        
+            <li><strong>Create a virtual environment and activate it:</strong></li>
+            <pre>python -m venv venv<br>source venv/bin/activate  # On Windows use `venv\Scripts\activate`</pre>
+        
+            <li><strong>Install dependencies:</strong></li>
+            <pre>pip install -r requirements.txt</pre>
+        </ol>
+        
+        <h3>Frontend Installation</h3>
+        <ol>
+            <li><strong>Navigate to the frontend directory:</strong></li>
+            <pre>cd ../frontend</pre>
+        
+            <li><strong>Install dependencies:</strong></li>
+            <pre>npm install</pre>
+        </ol>
+        
+        <h2>Code Implementation</h2>
+        <p>Code implementation details are available in the project's repository.</p>
+        
+        <h2>Deployment Process</h2>
+        <p><strong>Using Docker:</strong></p>
+        <ol>
+            <li><strong>Navigate to the project root:</strong></li>
+            <pre>cd CNMMS</pre>
+        
+            <li><strong>Build and run the Docker containers:</strong></li>
+            <pre>docker-compose up --build</pre>
+        </ol>
+        
+        <h2>Documentation</h2>
+        <p></p>
+        <p>Detailed installation and deployment guides are available in the <a href="./docs/installation_guide.html">Installation Guide</a> and <a href="./docs/deployment_guide.html">Deployment Guide</a>.</p>
+        <p>Detailed Documentation of this project is available in the <a href="./docs/documentation.html">Project Documentation </a>.</p>
+
+        <h2>Contribution</h2>
+        <p>Feel free to contribute to this project by submitting pull requests or reporting issues.</p>
+    </div>
+    <div class="watermark">
+        <p>Author: <a href="https://github.com/Krishnarjunmitra" target="_blank">Krishnarjun Mitra</a></p>
+        <p>&copy; 2024 Krishnarjun Mitra. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

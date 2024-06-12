@@ -1,0 +1,14 @@
+# Backend Dependencies
+psutil
+netifaces
+scikit-learn
+smtplib
+email
+requests  # For API calls (if needed)
+
+# Frontend Dependencies
+react
+react-dom
+react-router-dom  # For routing in the React app
+react-chartjs-2  # For charts
+axios  # For making API requests from the frontend

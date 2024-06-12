@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNMMS Project Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #05ffac18;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #0074a5;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+        }
+
+        .step-title {
+            background-color: #3f1e4a;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cdcbcb;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.384);
+        }
+
+        .command-line {
+            background-color: #f0f0f0;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .diagram img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .watermark a {
+            color: #15bb15;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+            <div class="section">
+                <div class="box">
+        <h1>CNMMS Project Documentation</h1>
+                </div>
+            </div>
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>The Computer Network Monitoring and Management System (CNMMS) is a sophisticated project aimed at monitoring, analyzing, and managing computer networks efficiently. This documentation provides an in-depth guide to the project's structure, installation process, and deployment.</p>
+            <p>The project is divided into two main components: the backend, which handles the network monitoring and data processing, and the frontend, which presents the data in a user-friendly interface.</p>
+        </div>
+
+      <div class="section">
+            <h2>2. Code Implementation</h2>
+            <p>The CNMMS project is composed of various modules that work together to monitor and manage network activities. Below are some key code snippets and their explanations:</p>
+
+            <div class="step">
+                <div class="step-title">Backend: Main Script</div>
+                <div class="step-content">
+                    <p>The <code>main.py</code> script initializes the backend services and starts the network monitoring process.</p>
+                    <pre><code>
+                        import sys
+
+                        print(sys.path)
+                        
+                        from flask import Flask, jsonify # type: ignore
+                        from network_monitor import start_monitoring
+                        from metrics_collector import get_metrics
+                        
+                        app = Flask(__name__)
+                        
+                        
+                        @app.route("/api/start", methods=["POST"])
+                        def start():
+                            start_monitoring()
+                            return jsonify({"message": "Monitoring started"}), 200
+                        
+                        
+                        @app.route("/api/metrics", methods=["GET"])
+                        def metrics():
+                            metrics_data = get_metrics()
+                            return jsonify(metrics_data), 200
+                        
+                        
+                        if __name__ == "__main__":
+                            app.run(debug=True, host="0.0.0.0", port=5000)
+                        
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">Frontend: Main React Component</div>
+                <div class="step-content">
+                    <p>The <code>App.js</code> file is the main component of the React application, serving as the entry point for the UI.</p>
+                    <pre><code>
+                        import React, { useState, useEffect } from 'react';
+                        import axios from 'axios';
+                        
+                        function App() {
+                          const [metrics, setMetrics] = useState({});
+                        
+                          useEffect(() => {
+                            axios.get('/api/metrics')
+                              .then(response => setMetrics(response.data))
+                              .catch(error => console.error('Error fetching metrics:', error));
+                          }, []);
+                        
+                          return (
+                            &lt;div className="App"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Network Monitoring Dashboard&lt;/h1&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;pre&gt;{JSON.stringify(metrics, null, 2)}&lt;/pre&gt;<br>
+                            &lt;/div&gt;
+                          );
+                        }
+                        
+                        export default App;
+                        
+                    </code></pre>
+                </div>
+            </div>
+
+            <!-- more code explanations -->
+
+        </div>
+
+        <div class="section">
+            <h2>3. Deployment Process</h2>
+            <div class="step">
+                <div class="step-title">Step 1: Docker Compose</div>
+                <div class="step-content">
+                    <p>Ensure Docker and Docker Compose are installed on your system. Navigate to the project root directory and run the following command:</p>
+                    <div class="command-line"><pre>docker-compose up --build</pre></div>
+                    <p>This command will build and run all the necessary Docker containers for the project.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-title">Step 2: Verify Deployment</div>
+                <div class="step-content">
+                    <p>After running the Docker Compose command, verify that the containers are running correctly:</p>
+                    <div class="command-line"><pre>docker ps</pre></div>
+                    <p>You should see containers for both the backend and frontend services running.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-title">Step 3: Access the Application</div>
+                <div class="step-content">
+                    <p>Open your web browser and navigate to:</p>
+                    <div class="command-line"><pre>http://localhost:3000</pre></div>
+                    <p>This URL will open the frontend of the CNMMS application, where you can interact with the network monitoring dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="watermark">
+        <p>Author: <a href="https://github.com/Krishnarjunmitra" target="_blank">Krishnarjun Mitra</a></p>
+        <p>&copy; 2024 Krishnarjun Mitra. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #6b9bad;
+            color: #000f06;
+            position: relative;
+        }
+
+        h1,
+        h2 {
+            color: #ff9100a5;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .step {
+            margin-bottom: 30px;
+        }
+
+        .step-title {
+            background-color: #178ea3;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .command-line {
+            background-color: #f0f0f0;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .watermark a {
+            color: #15bb15;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Deployment Guide</h1>
+        <div class="step">
+            <div class="step-title">Step 1: Prepare Environment</div>
+            <div class="step-content">
+                <p>Before deploying the application, ensure that you have the necessary environment set up:</p>
+                <ul>
+                    <li>Ensure Docker is installed on your deployment server.</li>
+                    <li>Make sure you have Docker Compose installed.</li>
+                    <li>Ensure the server has sufficient resources to run the application.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 2: Clone Repository</div>
+            <div class="step-content">
+                <p>Clone the project repository from GitHub:</p>
+                <div class="command-line"><pre>git clone https://github.com/Krishnarjunmitra/CNMMS.git</pre></div>
+                <p>Navigate to the project directory:</p>
+                <div class="command-line"><pre>cd CNMMS</pre></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 3: Build and Run Containers</div>
+            <div class="step-content">
+                <p>Build and run Docker containers using Docker Compose:</p>
+                <div class="command-line"><pre>docker-compose up --build</pre></div>
+                <p>This command will build the necessary Docker images and start the containers.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 4: Access the Application</div>
+            <div class="step-content">
+                <p>Once the containers are running, you can access the application using a web browser:</p>
+                <div class="command-line"><pre>http://your-server-ip:3000</pre></div>
+                <p>Replace "your-server-ip" with the actual IP address of your deployment server.</p>
+            </div>
+        </div>
+    </div>
+    <div class="watermark">
+        <p>Author: <a href="https://github.com/Krishnarjunmitra" target="_blank">Krishnarjun Mitra</a></p>
+        <p>&copy; 2024 Krishnarjun Mitra. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
