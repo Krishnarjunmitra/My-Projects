@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #b1c6d481;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #e50b0b;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            margin-bottom: 30px;
+        }
+
+        .step-title {
+            background-color: #0ddcbd;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .command-line {
+            background-color: #f0f0f0;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .watermark a {
+            color: #15bb15;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Installation Guide</h1>
+        <div class="step">
+            <div class="step-title">Step 1: Clone the Repository</div>
+            <div class="step-content">
+                <p>Clone the project repository from GitHub:</p>
+                <div class="command-line"><pre>git clone https://github.com/yourusername/CNMMS.git</pre></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 2: Backend Installation</div>
+            <div class="step-content">
+                <p>Navigate to the backend directory:</p>
+                <div class="command-line"><pre>cd CNMMS/backend</pre></div>
+                <p>Create a virtual environment and activate it:</p>
+                <div class="command-line"><pre>python -m venv venv<br>source venv/bin/activate  # On Windows use `venv\Scripts\activate`</pre></div>
+                <p>Install backend dependencies:</p>
+                <div class="command-line"><pre>pip install -r requirements.txt</pre></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 3: Frontend Installation</div>
+            <div class="step-content">
+                <p>Navigate to the frontend directory:</p>
+                <div class="command-line"><pre>cd ../frontend</pre></div>
+                <p>Install frontend dependencies:</p>
+                <div class="command-line"><pre>npm install</pre></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 4: Docker Setup</div>
+            <div class="step-content">
+                <p>Ensure Docker is installed on your system.</p>
+                <p>Build and run Docker containers:</p>
+                <div class="command-line"><pre>docker-compose up --build</pre></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">Step 5: Access the Application</div>
+            <div class="step-content">
+                <p>Once Docker containers are running, you can access the application at:</p>
+                <div class="command-line"><pre>http://localhost:3000</pre></div>
+            </div>
+        </div>
+    </div>
+    <div class="watermark">
+        <p>Author: <a href="https://github.com/Krishnarjunmitra" target="_blank">Krishnarjun Mitra</a></p>
+        <p>&copy; 2024 Krishnarjun Mitra. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
