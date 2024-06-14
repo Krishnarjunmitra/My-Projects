@@ -132,6 +132,37 @@
                 <p>Replace "your-server-ip" with the actual IP address of your deployment server.</p>
             </div>
         </div>
+        <div class="step">
+            <div class="step-title">Step 5: Deploy Frontend on Netlify</div>
+            <div class="step-content">
+                <p>To deploy the frontend on Netlify, follow these steps:</p>
+                <ul>
+                    <li>Login to Netlify and create a new site.</li>
+                    <li>Connect to your GitHub repository and select the appropriate branch.</li>
+                    <li>Configure the build settings:</li>
+                    <table>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>Branch to deploy</td>
+                            <td>master</td>
+                        </tr>
+                        <tr>
+                            <td>Build command</td>
+                            <td>npm run build</td>
+                        </tr>
+                        <tr>
+                            <td>Publish directory</td>
+                            <td>frontend/build</td>
+                        </tr>
+                    </table>
+                    <li>Click "Deploy site" to start the deployment process.</li>
+                </ul>
+                <p>Once deployed, you will receive a link to access your live site.</p>
+            </div>
+        </div>
     </div>
     <div class="watermark">
         <p>Author: <a href="https://github.com/Krishnarjunmitra" target="_blank">Krishnarjun Mitra</a></p>
